@@ -31,8 +31,10 @@
 
 			});
 
-			$('.vote').click(function() {
-				alert('You voted <I wish I couldve figured this out!>');
+			$(".vote li").click(function() {
+				var vac_name = $(this).closest(".vacation").find ("h2").text();
+				var dir = $(this).data("dir") //refers to data-dir HTML attribute
+				alert("You voted " + vac_name + " " + dir);
 
 
 			});
@@ -156,7 +158,10 @@
 			<ul id="vacations">
 				<li class="vacation america" data-price="399.99">
 					<h2>San Francisco, California</h2>
-					<ul class="vote"><li><a href="#">&uarr;</a></li><li><a href="#">&darr;</a></li></ul>
+					<ul class="vote">
+						<li data-dir="UP"><a href="#">&uarr;</a></li>
+						<li data-dir="DOWN"><a href="#">&darr;</a></li>
+					</ul>
 					<span class="details">Get Price</span>
 					<div class="tickets">
 						<p>Tickets <input type="number" class="quantity" value="1" /></p>
@@ -165,7 +170,9 @@
 				</li>
 				<li class="vacation america sale" data-price="299.99">
 					<h2>Washington, DC</h2>
-					<ul class="vote"><li><a href="#">&uarr;</a></li><li><a href="#">&darr;</a></li></ul>
+					<ul class="vote">
+						<li><a href="#">&uarr;</a></li>
+						<li><a href="#">&darr;</a></li></ul>
 					<span class="details">Get Price</span>
 					<div class="tickets">
 						<p>Tickets <input type="number" class="quantity" value="1" /></p>
@@ -174,7 +181,9 @@
 				</li>
 				<li class="vacation europe" data-price="499.99">
 					<h2>London, England</h2>
-					<ul class="vote"><li><a href="#">&uarr;</a></li><li><a href="#">&darr;</a></li></ul>
+					<ul class="vote">
+						<li><a href="#">&uarr;</a></li>
+						<li><a href="#">&darr;</a></li></ul>
 					<span class="details">Get Price</span>
 					<div class="tickets">
 						<p>Tickets <input type="number" class="quantity" value="1" /></p>
